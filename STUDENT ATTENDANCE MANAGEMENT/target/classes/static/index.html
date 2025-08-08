@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Student Attendance System</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Student Attendance System</h1>
+      <p class="sub">Spring Boot REST API + PostgreSQL + HTML/CSS/JS</p>
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-tab="students" role="tab" aria-selected="true">Students</button>
+        <button class="tab" data-tab="courses" role="tab" aria-selected="false">Courses</button>
+        <button class="tab" data-tab="attendance" role="tab" aria-selected="false">Attendance</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+     Students 
+    <section id="tab-students" class="panel active">
+      <div class="card">
+        <h2>Manage Students</h2>
+        <form id="student-form" class="grid">
+          <input type="hidden" id="student-id"/>
+          <div class="field">
+            <label for="rollNumber">Roll Number</label>
+            <input id="rollNumber" required maxlength="50" placeholder="R001"/>
+          </div>
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" required maxlength="100" placeholder="Alice"/>
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" required maxlength="100" placeholder="Anderson"/>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" maxlength="180" placeholder="alice@example.com"/>
+          </div>
+          <div class="actions">
+            <button class="btn primary" type="submit">Save</button>
+            <button class="btn" type="button" id="student-reset">Reset</button>
+          </div>
+          <p class="msg" id="student-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <h3>Students</h3>
+          <input id="student-search" type="search" placeholder="Search name..."/>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Roll</th><th>Name</th><th class="hide-sm">Email</th><th>Actions</th></tr></thead>
+            <tbody id="students-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+     Courses 
+    <section id="tab-courses" class="panel">
+      <div class="card">
+        <h2>Manage Courses</h2>
+        <form id="course-form" class="grid">
+          <input type="hidden" id="course-id"/>
+          <div class="field"><label for="code">Code</label><input id="code" required maxlength="50" placeholder="CS101"/></div>
+          <div class="field"><label for="name">Name</label><input id="name" required maxlength="200" placeholder="Intro to CS"/></div>
+          <div class="field field-full"><label for="description">Description</label><textarea id="description" rows="2" maxlength="10000"></textarea></div>
+          <div class="actions">
+            <button class="btn primary" type="submit">Save</button>
+            <button class="btn" type="button" id="course-reset">Reset</button>
+          </div>
+          <p class="msg" id="course-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <h3>Courses</h3>
+          <div class="controls">
+            <select id="course-select"></select>
+            <button class="btn" id="refresh-course">Refresh</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Code</th><th>Name</th><th class="hide-sm">Description</th><th>Actions</th></tr></thead>
+            <tbody id="courses-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <h3>Enrollments</h3>
+          <div class="controls">
+            <select id="enroll-course"></select>
+            <select id="enroll-student"></select>
+            <button class="btn primary" id="enroll-btn">Enroll</button>
+          </div>
+        </div>
+        <ul id="enrolled-list" class="pill-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+     Attendance 
+    <section id="tab-attendance" class="panel">
+      <div class="card">
+        <h2>Create/Load Session</h2>
+        <div class="grid">
+          <div class="field">
+            <label for="att-course">Course</label>
+            <select id="att-course"></select>
+          </div>
+          <div class="field">
+            <label for="att-date">Date</label>
+            <input id="att-date" type="date"/>
+          </div>
+          <div class="field field-full">
+            <label for="att-topic">Topic</label>
+            <input id="att-topic" maxlength="255" placeholder="Lecture topic"/>
+          </div>
+          <div class="actions">
+            <button class="btn primary" id="create-session">Create/Load Session</button>
+          </div>
+          <p class="msg" id="session-msg"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <h3>Mark Attendance</h3>
+          <div class="controls">
+            <span id="session-info" class="muted">No session loaded</span>
+            <button class="btn" id="refresh-roster">Refresh</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Roll</th><th>Name</th><th>Status</th></tr></thead>
+            <tbody id="roster-tbody"></tbody>
+          </table>
+        </div>
+        <div class="summary">
+          <span class="pill" id="sum-present">Present: 0</span>
+          <span class="pill" id="sum-absent">Absent: 0</span>
+          <span class="pill" id="sum-late">Late: 0</span>
+          <span class="pill" id="sum-excused">Excused: 0</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© 2025 Student Attendance Mini Project</small>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:attendance_db}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:Manik1092}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: false
+    locations: classpath:db/migration
+
+logging:
+  level:
+    org.hibernate.SQL: info
+    org.hibernate.orm.jdbc.bind: info
