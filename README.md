@@ -81,3 +81,12 @@ mvn spring-boot:run
 Thanks to **Prajwal Sanade** for valuable contributions to this project.
 
 ---
+
+## OUTPUT :-
+
+<img width="1920" height="1080" alt="Screenshot (311)" src="https://github.com/user-attachments/assets/2791dcea-ff7f-46e8-a2cb-503532d03d5b" />
+<img width="1920" height="1080" alt="Screenshot (312)" src="https://github.com/user-attachments/assets/85abf712-e1b4-49d8-9051-c977ec182a69" />
+<img width="1920" height="1080" alt="Screenshot (314)" src="https://github.com/user-attachments/assets/64cabcfa-a14f-45b7-a94d-b30922a68853" />
+<img width="1920" height="1080" alt="Screenshot (315)" src="https://github.com/user-attachments/assets/fb7740a3-8631-4162-aa28-a075f9e20977" />
+<img width="1920" height="1080" alt="Screenshot (316)" src="https://github.com/user-attachments/assets/3af7233c-d6f9-47e0-b47a-1db8e448d0df" />
+
