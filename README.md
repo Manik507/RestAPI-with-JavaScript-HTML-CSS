@@ -83,6 +83,7 @@ mvn spring-boot:run
 ## 🙌 Acknowledgements
 
 Thanks to **Prajwal Sanade** for valuable contributions to this project.
+Managed By :- **Manik Barad**
 
 ---
 
