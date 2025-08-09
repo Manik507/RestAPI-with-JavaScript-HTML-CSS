@@ -117,4 +117,12 @@ Managed By :- **Manik Barad**
 ---
 
 ## ATTENDANCE RECORDS :-
+The attendance_records table stores the attendance status of students for specific sessions. Each row represents a single attendance entry for a given student in a given session.
+| Column Name     | Type                       | Description                                                       |
+| --------------- | -------------------------- | ----------------------------------------------------------------- |
+| **id**          | `bigint` (Primary Key)     | Unique identifier for each attendance record.                     |
+| **session\_id** | `bigint`                   | References the session in which the attendance was recorded.      |
+| **student\_id** | `bigint`                   | References the student whose attendance is recorded.              |
+| **status**      | `varchar(16)`              | Attendance status (e.g., `PRESENT`, `ABSENT`, `LATE`, `EXCUSED`). |
+| **marked\_at**  | `timestamp with time zone` | Date and time when the attendance was marked.                     |
 <img width="1920" height="1080" alt="Screenshot (324)" src="https://github.com/user-attachments/assets/50aed5f6-2724-4f67-9713-6660d3a52a92" />
