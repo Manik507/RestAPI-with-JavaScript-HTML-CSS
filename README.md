@@ -42,8 +42,8 @@ Backend
 1. Navigate to the backend folder:  
 2. Configure `application.properties` with your database details:  
 spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.datasource.username=postgres
+spring.datasource.password=Manik1092
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 3. Run Flyway migrations (optional if using Flyway):  
@@ -76,6 +76,10 @@ mvn spring-boot:run
 
 ---
 
+## NOTE :- Upon running the application, the system automatically initializes the database with demo data, including predefined students and courses for testing purposes.The output shown below excludes demo students and courses.
+
+---
+
 ## 🙌 Acknowledgements
 
 Thanks to **Prajwal Sanade** for valuable contributions to this project.
@@ -84,23 +88,32 @@ Thanks to **Prajwal Sanade** for valuable contributions to this project.
 
 ## OUTPUT :-
 
-<img width="1920" height="1080" alt="Screenshot (311)" src="https://github.com/user-attachments/assets/2791dcea-ff7f-46e8-a2cb-503532d03d5b" />
+--- 
+
+## CREATING THE STUDENT :- 
+<img width="1920" height="1080" alt="Screenshot (319)" src="https://github.com/user-attachments/assets/53eea3bb-e488-41a3-8bd0-b6dfdc935de9" />
 
 ---
 
-<img width="1920" height="1080" alt="Screenshot (312)" src="https://github.com/user-attachments/assets/85abf712-e1b4-49d8-9051-c977ec182a69" />
+## CREATING THE COURSE
+<img width="1920" height="1080" alt="Screenshot (320)" src="https://github.com/user-attachments/assets/66416621-c562-40f9-8b72-cbcb06fb5102" />
 
 ---
 
-<img width="1920" height="1080" alt="Screenshot (314)" src="https://github.com/user-attachments/assets/64cabcfa-a14f-45b7-a94d-b30922a68853" />
+## ENROLLING THE STUDENT TO THE COURSE :-
+<img width="1920" height="1080" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/8c0277c7-98de-46a2-a7dc-3c1ac4d05ca9" />
 
 ---
 
-<img width="1920" height="1080" alt="Screenshot (315)" src="https://github.com/user-attachments/assets/fb7740a3-8631-4162-aa28-a075f9e20977" />
+## CREATING THE SESSION OF THE COURSE :-
+<img width="1920" height="1080" alt="Screenshot (322)" src="https://github.com/user-attachments/assets/c4ba9a96-38f9-44fb-a301-b3b170bd1505" />
 
 ---
 
-<img width="1920" height="1080" alt="Screenshot (316)" src="https://github.com/user-attachments/assets/3af7233c-d6f9-47e0-b47a-1db8e448d0df" />
+## UPDATING THE STATUS OF THE STUDENT :-
+<img width="1920" height="1080" alt="Screenshot (323)" src="https://github.com/user-attachments/assets/a215a0cf-036f-49a0-9688-2544b724d4c6" />
 
+---
 
-
+## ATTENDANCE RECORDS :-
+<img width="1920" height="1080" alt="Screenshot (324)" src="https://github.com/user-attachments/assets/50aed5f6-2724-4f67-9713-6660d3a52a92" />
