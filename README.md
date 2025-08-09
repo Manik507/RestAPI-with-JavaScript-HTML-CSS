@@ -76,7 +76,7 @@ mvn spring-boot:run
 
 ---
 
-## NOTE :- Upon running the application, the system automatically initializes the database with demo data, including predefined students and courses for testing purposes.The output shown below excludes demo students and courses.
+## Note: Upon application startup, the system automatically seeds the database with demo data, including predefined students and courses for testing purposes. The output below excludes these demo entries. The application supports creating multiple students and courses, as well as marking the attendance status of individual students for any specific course.
 
 ---
 
